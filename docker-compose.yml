@@ -1,0 +1,24 @@
+registry:
+  build: ./registry
+  ports:
+    - "5555:5000"
+  links:
+    - pump:webhookmonitor
+
+pump:
+  build: ./pump
+  expose:
+    - "8000"
+  links:
+    - elasticsearch:esnode
+  
+elasticsearch:
+  image: elasticsearch:1.6
+  ports:
+    - "9200:9200"
+  command: "-Des.http.cors.enabled=true"
+
+calaca:
+  build: ./calaca
+  ports:
+    - "3000:3000"
