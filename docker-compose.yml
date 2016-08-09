@@ -24,7 +24,7 @@ pump:
 # bind-mount that volume to a specific location on the disk.
 # Doing so may be useful for integration with volume management tools
 elasticsearch:
-  image: elasticsearch:1.6
+  image: elasticsearch:1.5
   ports:
     - "9200:9200"
   command: "-Des.http.cors.enabled=true"

@@ -1,4 +1,4 @@
-FROM node
+FROM node:0.12
 MAINTAINER Jeff Nickoloff <jeff@allingeek.com>
 RUN adduser --system --group --disabled-password -shell /bin/bash example
 COPY ./service /usr/src/app

@@ -8,7 +8,7 @@ var server = http.createServer(function (req, res) {
       var eventListBlob = JSON.parse(raw);
       
       for (var i = 0; i < eventListBlob.events.length; i++) {
-        if (eventListBlob.events[i].target.mediaType != "application/vnd.docker.distribution.manifest.v1+json") {
+        if (eventListBlob.events[i].target.mediaType != "application/vnd.docker.distribution.manifest.v2+json") {
           continue;
         }
 
